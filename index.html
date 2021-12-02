@@ -91,9 +91,7 @@
                   <li class="nav-item virtual_services d-none">
                      <a class="nav-link virtual_services_header" href="#live-streaming-section-0">Watch Ceremony</a>
                   </li>
-                  <li class="nav-item join_virtually_nav d-none">
-                     <a class="join_us_virtually nav-link" href="#join_virtually" id="join-virtually-head-title-2" data-id="">Can't attend in person?<br><span>JOIN US VIRTUALLY</span></a>
-                  </li>
+                  
                </ul>
             </div>
          </nav>
@@ -111,23 +109,24 @@
       <section class="countdown-section">
          <div class="countdown-banner header-countdown">
             <div class="countdown-value">
-               <div class="timer days">52</div>
+               <div class="timer days" id="days"></div>
                <div class="title">Days</div>
             </div>
+
             <div class="countdown-value">
-               <div class="timer hours">10</div>
+               <div class="timer hours" id="hours"></div>
                <div class="title">Hours</div>
             </div>
             <div class="count-down-message">
                Countdown<br>to our big day!
             </div>
             <div class="countdown-value">
-               <div class="timer min">58</div>
+               <div class="timer min" id="minutes"></div>
                <div class="title d-none d-sm-none d-md-block">Minutes</div>
                <div class="title d-sm-block d-md-none">Mins</div>
             </div>
             <div class="countdown-value">
-               <div class="timer sec">50</div>
+               <div class="timer sec" id="seconds"></div>
                <div class="title d-none d-sm-none d-md-block">Seconds</div>
                <div class="title d-sm-block d-md-none">Secs</div>
             </div>
@@ -149,7 +148,7 @@
       <!-- Count Down Section Ends-->
       <!-- Banner section  -->
       <section class="banner" id="banner">
-         <img class="banner-image" src="./assets/images/banner/theme18.jpg" alt="Banner image">
+         <img class="banner-image" src="./assets/images/banner/banner1.jpeg" alt="Banner image">
       </section>
       <!-- Our Story section  -->
       <section class="ourstory content-section" id="our_story">
@@ -163,7 +162,7 @@
                         <div class="ourstory-title left-text">How we met</div>
                         <div class="arrow-cls"><span id="our-success-story-01-text1" class="css-shape">2020</span></div>
                         <div class="ourstory-title right-text">How we met</div>
-                        <figure id="story-01-img" class="ourstory-img"><img src="./assets/images/story/story-1.jpg" alt="Our Story 01"></figure>
+                        <figure id="story-01-img" class="ourstory-img"><img src="./assets/images/story/story-6.jpeg" alt="Our Story 01"></figure>
                         <p id="our-success-story-01-text2">He always says that choosing to miss his flight to talk to me was the best decision he made in his life.</p>
                      </div>
                   </div>
@@ -172,7 +171,7 @@
                         <div class="ourstory-title left-text">The proposal</div>
                         <div class="arrow-cls"><span id="our-success-story-11-text1" class="css-shape">2020</span></div>
                         <div class="ourstory-title right-text">The proposal</div>
-                        <figure id="story-11-img" class="ourstory-img"><img src="./assets/images/story/story-2.jpg" alt="Our Story 11"></figure>
+                        <figure id="story-11-img" class="ourstory-img"><img src="./assets/images/story/story-7.jpeg" alt="Our Story 11"></figure>
                         <p id="our-success-story-11-text2">He proposed on a Scrabble board. It's a game we both love. He spelled, 'WILL YOU MARRY ME'? I framed the board; it now hangs in our home!</p>
                      </div>
                   </div>
@@ -301,24 +300,8 @@
          </div>
       </section>
       <!-- Functions section end  -->
-      <!-- Travel section  -->
-      <section class="travel content-section" id="travel">
-         <div class="container">
-            <div class="section-title">Travel</div>
-            <div class="content-list">
-            </div>
-         </div>
-      </section>
-      <!-- Travel section ends  -->
-      <!--Live Streaming and Guest Party Section Starts-->
-      <section class="join-virtually content-section" id="join_virtually">
-         <div class="container">
-            <div class="section-title">Join Us Virtually</div>
-            <div class="content-list">
-            </div>
-         </div>
-      </section>
-      <!--Live Streaming and Guest Party Section Ends-->
+      
+      
       <!-- Gift Registry section Starts -->
       <div class="content-section d-none" id="gift_registry">
          <div class="section-title">Gift Registry</div>
@@ -415,10 +398,7 @@
                </div>
             </div>
          </div>
-         <div class="powered-by-footer">
-            Powered by: <a class="powered-by-footer-tag"
-               href="https://www.weddingwishlist.com/">www.WeddingWishlist.com</a>
-         </div>
+         <div class="powered-by-footer"></div>
       </footer>
       <!--Footer Section End-->
       <div class="modal fade" id="locationmodal" role="dialog">
@@ -473,10 +453,45 @@
    <script type="text/javascript" src="./assets/js/bootstrap-4/bootstrap.min.js"></script>
    <script type="text/javascript" src="./assets/js/jquery-ui.js"></script>
    <script type="text/javascript" src="./assets/js/waterfall.min.js"></script>
-   <script type="text/javascript" src="./assets/js/common_website.js"></script>
+   <!-- <script type="text/javascript" src="./assets/js/common_website.js"></script> -->
    <script type="text/javascript" src="./assets/js/locationpicker.jquery.js"></script>
    <script type="text/javascript" src="./assets/js/jquery.datetimepicker.full.min.js"></script>
    <script type="text/javascript" src="./assets/js/inline_gallery.js"></script>
    <script type="text/javascript" src="./assets/js/load_registry_products.js?v=1"></script>
    <script type="text/javascript" src="./assets/js/layout1/layout_1.js"></script>
+   <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Jan 23, 2022 15:37:25").getTime();
+      
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+      
+        // Get today's date and time
+        var now = new Date().getTime();
+      
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+      
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+      
+        // Display the result in the element with id="demo"
+       // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      
+        // If the count down is finished, write some text
+      //   if (distance < 0) {
+      //     clearInterval(x);
+      //     document.getElementById("demo").innerHTML = "EXPIRED";
+      //   }
+      }, 1000);
+      </script>
 </html>
