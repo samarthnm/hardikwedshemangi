@@ -273,7 +273,7 @@ h1.couple-name {
     margin: 0 auto;
 }
 .banner-image{
-    /* content: var(--banner-image); */
+    content: var(--banner-image);
     max-width: 100%;
     max-height: 100%;
     height: 100%;
