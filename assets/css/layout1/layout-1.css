@@ -1913,3 +1913,15 @@ a.powered-by-footer-tag:hover {
     display: block !important;
     border: none !important;
 }
+
+
+.lightGallery {
+    width: 100%;
+    margin: 0
+}
+
+.lightGallery .image-tile {
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 10px
+}
